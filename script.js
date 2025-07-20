@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  loader.load(`assets/${name}.glb`,
+  loader.load(`assets/${name}.glb.txt`,
     function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {
