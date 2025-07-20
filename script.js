@@ -1,10 +1,10 @@
 let oven = null;
-const loader = new THREE.GLTFLoader();
-const scene = document.querySelector('a-scene').object3D;
-
+const url = `https://raw.githubusercontent.com/WolfeHall/forno-nardona-ar/main/assets/${name}.glb`;
+loader.load(url,
 function loadOven(name) {
   console.log("Loading oven:", name);
-  loader.load(`assets/${name}.glb.txt`,
+  const url = `https://raw.githubusercontent.com/WolfeHall/forno-nardona-ar/main/assets/${name}.glb`;
+  loader.load(url,
     function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {
