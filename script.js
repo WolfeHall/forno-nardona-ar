@@ -1,6 +1,7 @@
 let oven = null;
-const url = `https://raw.githubusercontent.com/WolfeHall/forno-nardona-ar/main/assets/${name}.glb`;
-loader.load(url,
+const loader = new THREE.GLTFLoader();
+const scene = document.querySelector('a-scene').object3D;
+
 function loadOven(name) {
   console.log("Loading oven:", name);
   const url = `https://raw.githubusercontent.com/WolfeHall/forno-nardona-ar/main/assets/${name}.glb`;
@@ -29,6 +30,12 @@ function loadOven(name) {
 function changeOvenColor(colorHex) {
   if (!oven) return;
   oven.traverse((node) => {
+    if (node.isMesh && node.material) {
+      node.material.color.set(colorHex);
+      node.material.needsUpdate = true;
+    }
+  });
+}
     if (node.isMesh && node.material) {
       node.material.color.set(colorHex);
       node.material.needsUpdate = true;
