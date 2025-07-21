@@ -4,7 +4,8 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `${name}.glb`;
+  const url = `https://luminous-halva-17d11a.netlify.app/${name.toLowerCase()}.glb`;
+
   loader.load(
     url,
     function (gltf) {
