@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `https://raw.githubusercontent.com/WolfeHall/forno-nardona-ar/main/assets/${name}.glb`;
+  const url = `https://symphonious-fudge-6d9c6b.netlify.app/${name}.glb`;
   loader.load(url,
     function (gltf) {
       console.log("✅ Model loaded:", name);
@@ -19,6 +19,14 @@ function loadOven(name) {
       oven.scale.set(1, 1, 1);
       oven.position.set(0, 0, -1);
       scene.add(oven);
+    },
+    undefined,
+    function (error) {
+      console.error("❌ GLB load error:", error);
+    }
+  );
+}
+
     },
     undefined,
     function (error) {
