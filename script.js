@@ -5,7 +5,8 @@ const scene = document.querySelector('a-scene').object3D;
 function loadOven(name) {
   console.log("Loading oven:", name);
   const url = `https://symphonious-fudge-6d9c6b.netlify.app/${name}.glb`;
-  loader.load(url,
+  loader.load(
+    url,
     function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {
@@ -27,14 +28,6 @@ function loadOven(name) {
   );
 }
 
-    },
-    undefined,
-    function (error) {
-      console.error("❌ GLB load error:", error);
-    }
-  );
-}
-
 function changeOvenColor(colorHex) {
   if (!oven) return;
   oven.traverse((node) => {
@@ -44,10 +37,3 @@ function changeOvenColor(colorHex) {
     }
   });
 }
-    if (node.isMesh && node.material) {
-      node.material.color.set(colorHex);
-      node.material.needsUpdate = true;
-    }
-  });
-}
-
