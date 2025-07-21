@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `https://symphonious-fudge-6d9c6b.netlify.app/${name}.glb`;
+const url = `https://euphonious-mooncake-d44cdc.netlify.app/${name}.glb`;
   loader.load(
     url,
     function (gltf) {
