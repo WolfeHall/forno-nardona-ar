@@ -4,8 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `const url = `${name}.glb`;
- // ✅ THIS IS NOW CORRECT
+  const url = `${name}.glb`;
   loader.load(
     url,
     function (gltf) {
@@ -28,6 +27,17 @@ function loadOven(name) {
     }
   );
 }
+
+function changeOvenColor(colorHex) {
+  if (!oven) return;
+  oven.traverse((node) => {
+    if (node.isMesh && node.material) {
+      node.material.color.set(colorHex);
+      node.material.needsUpdate = true;
+    }
+  });
+}
+
 
 function changeOvenColor(colorHex) {
   if (!oven) return;
