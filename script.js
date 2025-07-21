@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-const url = `https://extraordinary-hotteok-c047bc.netlify.app/${name}.glb`;
+  const url = `https://creative-madeleine-e8506a.netlify.app/${name}.glb`;  // ✅ THIS IS NOW CORRECT
   loader.load(
     url,
     function (gltf) {
@@ -29,6 +29,15 @@ const url = `https://extraordinary-hotteok-c047bc.netlify.app/${name}.glb`;
 }
 
 function changeOvenColor(colorHex) {
+  if (!oven) return;
+  oven.traverse((node) => {
+    if (node.isMesh && node.material) {
+      node.material.color.set(colorHex);
+      node.material.needsUpdate = true;
+    }
+  });
+}
+colorHex) {
   if (!oven) return;
   oven.traverse((node) => {
     if (node.isMesh && node.material) {
