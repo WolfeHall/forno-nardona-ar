@@ -4,7 +4,8 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `https://rad-basbousa-6c944d.netlify.app/${name}.glb`;  // ✅ THIS IS NOW CORRECT
+  const url = `const url = `${name}.glb`;
+ // ✅ THIS IS NOW CORRECT
   loader.load(
     url,
     function (gltf) {
