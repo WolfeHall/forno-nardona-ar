@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `https://creative-madeleine-e8506a.netlify.app/${name}.glb`;  // ✅ THIS IS NOW CORRECT
+  const url = `https://effulgent-raindrop-ff4143.netlify.app/${name}.glb`;  // ✅ THIS IS NOW CORRECT
   loader.load(
     url,
     function (gltf) {
