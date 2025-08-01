@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = `bucolic-trifle-aab698.netlify.app/${name}.glb`; // <- Replace with your current Netlify site
+  const url = `https://app.netlify.com/projects/vermillion-brioche-9f5909/${name}.glb`; // <- Replace with your current Netlify site
   loader.load(
     url,
     function (gltf) {
